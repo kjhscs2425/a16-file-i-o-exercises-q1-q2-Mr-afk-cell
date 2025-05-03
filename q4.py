@@ -6,7 +6,10 @@ if os.path.isfile("data.json"):
     # If it does, read "data.json" into the variable `data`
 
     ####
-    #### YOUR CODE HERE 
+    #### YOUR CODE HERE
+    with open('data.json') as f:
+        data = json.load(f)
+        
     ####
 
 else:
@@ -21,7 +24,8 @@ recommendation = input("What book/movie/podcast/etc. would you recommend? ")
 data[name] = recommendation
 
 # Write the `data` variable to the file "data.json"
-
+with open('data.json', 'w') as f:
+   json.dump(data, f)
 ####
 #### YOUR CODE HERE 
 ####
